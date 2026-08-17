@@ -1,0 +1,394 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  color: #21232d;
+  background: #fff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  position: relative;
+  min-height: 902px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page::before {
+  position: absolute;
+  z-index: -1;
+  inset: -75px;
+  content: '';
+  background: linear-gradient(180deg, rgba(187, 133, 255, .166) -8.54%, rgba(255, 244, 251, .2) 100%);
+  filter: blur(75px);
+}
+
+.content {
+  width: min(1110px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section-label {
+  width: max-content;
+  color: #8643dc;
+  font: 400 18px/24px 'Red Hat Display', sans-serif;
+}
+
+.section-label span {
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin-top: 10px;
+  background: #8643dc;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 512px 1fr;
+  align-items: start;
+  margin-top: 20px;
+}
+
+h1 {
+  width: 512px;
+  margin: 0;
+  color: #21232d;
+  font: 500 36px/52px Roboto, sans-serif;
+}
+
+.contact-email {
+  justify-self: end;
+  transform: translateY(-2px);
+  color: #8643dc;
+  font: 400 24px/28px Roboto, sans-serif;
+  text-decoration: underline;
+  text-transform: lowercase;
+}
+
+.contact-form {
+  margin-top: 50px;
+}
+
+.field {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0 0 17px;
+  color: #21232d;
+  font: 400 20px/26px 'Red Hat Display', sans-serif;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dad2e3;
+  border-radius: 0;
+  outline: 0;
+}
+
+.field + .field {
+  margin-top: 45px;
+}
+
+.field::placeholder {
+  color: #a8a0b0;
+  opacity: 1;
+}
+
+.field:focus {
+  border-bottom-color: #8643dc;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.form-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 60px;
+  margin-top: 30px;
+}
+
+.quote-button {
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  color: #fff;
+  font: 500 18px/24px 'Red Hat Display', sans-serif;
+  background: #8643dc;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.quote-button:hover,
+.quote-button:focus-visible {
+  background: #7534c8;
+}
+
+.quote-button:disabled,
+.icon-button:disabled {
+  cursor: default;
+  opacity: .65;
+}
+
+.right-actions {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 16px;
+}
+
+.file-name {
+  max-width: 180px;
+  overflow: hidden;
+  color: #637085;
+  font: 400 13px/18px 'Red Hat Display', sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-button {
+  display: grid;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  place-items: center;
+}
+
+.attach-button {
+  width: 18px;
+  height: 18px;
+}
+
+.attach-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #637085;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.3;
+}
+
+.arrow-button {
+  width: 30px;
+  height: 30px;
+}
+
+.arrow-button svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #8643dc;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.form-status {
+  margin: 12px 0 -30px;
+  color: #637085;
+  font: 400 14px/20px 'Red Hat Display', sans-serif;
+}
+
+.friends {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.friends h2 {
+  margin: 0;
+  font: 500 36px/48px 'Red Hat Display', sans-serif;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.social-link {
+  position: relative;
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+}
+
+.social-link::before,
+.social-link::after {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  content: '';
+}
+
+.social-link::before {
+  background: #ff79c6;
+  border-radius: 36% 47% 39% 45%;
+  transform: rotate(19deg);
+}
+
+.social-link::after {
+  width: 42px;
+  height: 42px;
+  background: #cb40e3;
+  border-radius: 43% 35% 46% 38%;
+  transform: rotate(-16deg);
+}
+
+.social-link svg {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.8;
+}
+
+.social-link .dot {
+  fill: #fff;
+  stroke: none;
+}
+
+@media (max-width: 900px) {
+  .page {
+    min-height: 100vh;
+  }
+
+  .content {
+    width: 100%;
+    padding: 40px 32px 48px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    width: min(100%, 600px);
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .contact-email {
+    justify-self: start;
+    margin-top: 24px;
+    transform: none;
+  }
+
+  .contact-form {
+    margin-top: 48px;
+  }
+
+  .friends {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 32px 24px 40px;
+  }
+
+  .section-label {
+    font-size: 17px;
+  }
+
+  .intro-grid {
+    margin-top: 18px;
+  }
+
+  h1 {
+    font-size: 31px;
+    line-height: 42px;
+  }
+
+  .contact-email {
+    font-size: 21px;
+    line-height: 26px;
+  }
+
+  .field {
+    font-size: 18px;
+  }
+
+  .field + .field {
+    margin-top: 36px;
+  }
+
+  .form-actions {
+    margin-top: 28px;
+  }
+
+  .quote-button {
+    width: 180px;
+    height: 56px;
+    font-size: 17px;
+  }
+
+  .file-name {
+    display: none;
+  }
+
+  .friends {
+    margin-top: 72px;
+  }
+
+  .friends h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .socials {
+    gap: 28px;
+    margin-top: 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  .content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .quote-button {
+    width: 165px;
+  }
+}

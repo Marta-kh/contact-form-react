@@ -1,0 +1,27 @@
+{
+  "name": "contact-form-react",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"node --watch server/index.js\"",
+    "build": "vite build",
+    "start": "node server/index.js"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "dependencies": {
+    "dotenv": "17.4.2",
+    "express": "5.2.1",
+    "multer": "2.2.0",
+    "nodemailer": "9.0.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.4",
+    "concurrently": "10.0.4",
+    "vite": "8.2.0"
+  }
+}
